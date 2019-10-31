@@ -103,6 +103,10 @@ ul.menu li.current-menu-item > a:before {
     bottom: 4px;
 }
 
+.form-control:focus{
+    box-shadow: none !important;
+}
+
 /*--------------------------------------------------------------
 # RADIO BTN
 --------------------------------------------------------------*/
@@ -542,7 +546,7 @@ footer.site-footer {
 # PRODUCT
 --------------------------------------------------------------*/
 
-#respond{
+#respond {
     background: transparent;
 }
 
@@ -687,7 +691,7 @@ button, input[type='button'], input[type='reset'], input[type='submit'], .button
     border-bottom-color: #0f834d;
 }
 
-.form-row.woocommerce-invalid input.input-text{
+.form-row.woocommerce-invalid input.input-text {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -706,32 +710,36 @@ button, input[type='button'], input[type='reset'], input[type='submit'], .button
     visibility: hidden;
 }
 
-#payment .payment_methods{
+.required {
+    visibility: hidden;
+}
+
+#payment .payment_methods {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     border: 1px solid #f2f2f2;
 }
 
-#payment .payment_methods > li:not(.woocommerce-notice){
+#payment .payment_methods > li:not(.woocommerce-notice) {
     background: transparent;
 }
 
-#payment .payment_methods > .woocommerce-PaymentMethod > label, #payment .payment_methods > .wc_payment_method > label{
+#payment .payment_methods > .woocommerce-PaymentMethod > label, #payment .payment_methods > .wc_payment_method > label {
     border-bottom: 1px solid #f2f2f2;
     margin-bottom: 0;
     background: #f2f2f2;
 }
 
-table:not( .has-background ) th{
+table:not( .has-background ) th {
     background-color: #f2f2f2;
 }
 
-table:not( .has-background ) tbody td{
+table:not( .has-background ) tbody td {
     background-color: #fafafa;
 }
 
-#payment .payment_methods > li .payment_box, #payment .place-order{
+#payment .payment_methods > li .payment_box, #payment .place-order {
     background: transparent;
 }
 
@@ -769,7 +777,6 @@ table:not( .has-background ) tbody td{
 }
 
 .woocommerce-message:hover, .woocommerce-info:hover, .woocommerce-error:hover, .woocommerce-noreviews:hover, p.no-comments:hover {
-    box-shadow: 0 1px 3px 1px rgba(60, 64, 67, .2), 0 2px 8px 4px rgba(60, 64, 67, .1);
 }
 
 .woocommerce-error {
