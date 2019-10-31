@@ -24,9 +24,8 @@
                         <p class="mb-0 site-description"><?php bloginfo('description'); ?></p>
                     </a>
                     <p class="mb-0 footer-credits d-lg-block d-none">
-                        Сделано в <a class="credits" href="https://richbee.ru/" target="_blank"
-                                     title="WordPress Technical Support"
-                                     alt="Bootstrap WordPress Theme"><?php echo esc_html__('Richbee', 'wp-bootstrap-starter'); ?></a>
+                        <a class="credits" href="https://richbee.ru/" target="_blank"><img
+                                    src="/wp-content/themes/storefront-child/svg/Richbee-black.svg" alt=""></a>
                     </p>
 
                 </div><!-- close .site-info -->
@@ -80,8 +79,8 @@
                     , 2015 - <?php echo date('Y'); ?>
                 </p>
                 <p class="mb-0 footer-credits d-lg-none d-block">
-                    Сделано в <a class="credits" href="https://richbee.ru/"
-                                 target="_blank"><?php echo esc_html__('Richbee', 'wp-bootstrap-starter'); ?></a>
+                    <a class="credits" href="https://richbee.ru/"
+                       target="_blank"><img src="/wp-content/themes/storefront-child/svg/Richbee-black.svg" alt=""></a>
                 </p>
             </div>
         </div>
