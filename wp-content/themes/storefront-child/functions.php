@@ -214,8 +214,15 @@ add_filter('woocommerce_checkout_fields', 'new_woocommerce_checkout_fields', 10,
 function new_woocommerce_checkout_fields($fields)
 {
     if (!WC()->cart->needs_shipping()) {
-        unset($fields['billing']['billing_address']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_address_1']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_address_2']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_city']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_postcode']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_country']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_state']); //удаляем Населённый пункт
+        unset($fields['billing']['billing_company']); //удаляем Населённый пункт
         unset($fields['billing']['phone']); //удаляем Населённый пункт
+
     }
     return $fields;
 }
@@ -303,5 +310,20 @@ function storefront_page_content()
         ?>
     </div>
     <?php
+}
+
+add_filter('woocommerce_sale_flash', 'my_custom_sale_flash', 10, 3);
+function my_custom_sale_flash($text, $post, $_product)
+{
+    return '<span class="onsale">SALE!</span>';
+}
+
+// Колонки related
+add_filter('woocommerce_output_related_products_args', 'jk_related_products_args');
+function jk_related_products_args($args)
+{
+    $args['posts_per_page'] = 6; // количество "Похожих товаров"
+    $args['columns'] = 4; // количество колонок
+    return $args;
 }
 

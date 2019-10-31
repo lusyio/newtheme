@@ -73,20 +73,20 @@ header .woocommerce {
     padding-left: 15px;
 }
 
-h1.entry-title{
+h1.entry-title {
     text-align: center;
 }
 
-.widget_nav_menu ul li::before{
+.widget_nav_menu ul li::before {
     content: '';
     display: none;
 }
 
-.widget-area .widget a:not(.button){
+.widget-area .widget a:not(.button) {
     text-decoration: none;
 }
 
-ul.menu li.menu-item > a{
+ul.menu li.menu-item > a {
     position: relative;
     padding-left: 0;
     padding-right: 0;
@@ -94,7 +94,7 @@ ul.menu li.menu-item > a{
     width: -moz-fit-content;
 }
 
-ul.menu li.current-menu-item > a:before{
+ul.menu li.current-menu-item > a:before {
     display: block;
     content: '';
     width: 100%;
@@ -117,7 +117,7 @@ ul.menu li.current-menu-item > a:before{
     padding: 0;
 }
 
-#payment .payment_methods > .woocommerce-PaymentMethod > label::before, #payment .payment_methods > .wc_payment_method > label::before{
+#payment .payment_methods > .woocommerce-PaymentMethod > label::before, #payment .payment_methods > .wc_payment_method > label::before {
     display: none;
     content: '';
 }
@@ -144,7 +144,7 @@ ul.menu li.current-menu-item > a:before{
     transition: opacity 0.3s, transform 0.2s;
 }
 
-.form-row input[type=checkbox], .form-row input[type=radio]{
+.form-row input[type=checkbox], .form-row input[type=radio] {
     width: 40px;
 }
 
@@ -167,7 +167,7 @@ ul.menu li.current-menu-item > a:before{
     box-sizing: border-box;
     margin: 2px 10px 2px 0;
     border: solid 2px; /* Safari */
-    border-color: rgba( 0, 0, 0, 0.6);
+    border-color: rgba(0, 0, 0, 0.6);
     border-radius: 50%;
     width: 28px;
     height: 28px;
@@ -538,6 +538,17 @@ footer.site-footer {
 # FOOTER
 --------------------------------------------------------------*/
 
+/*--------------------------------------------------------------
+# PRODUCT
+--------------------------------------------------------------*/
+
+#respond{
+    background: transparent;
+}
+
+/*--------------------------------------------------------------
+# PRODUCT
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # PRODUCT_LIST
@@ -548,10 +559,45 @@ ul.products li.product {
     transition: box-shadow 135ms cubic-bezier(.4, 0, .2, 1);
     padding-bottom: 1rem;
     border-radius: 3px;
+    overflow: hidden;
 }
 
 ul.products li.product:hover {
     box-shadow: 0 1px 3px 1px rgba(60, 64, 67, .2), 0 2px 8px 4px rgba(60, 64, 67, .1);
+}
+
+.wc-block-grid__product-onsale, .onsale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 72px;
+    padding: 25px 5px;
+    height: 72px;
+    text-align: center;
+    z-index: 100;
+    color: #fff;
+    background-color: #e4e4e4;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    font-size: 13px;
+    border: 0;
+    font-weight: 800;
+    -webkit-border-radius: 0 0 3px 0;
+    -moz-border-radius: 0 0 3px 0;
+    border-radius: 0 0 3px 0;
+}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link .woocommerce-placeholder.wp-post-image {
+    display: block;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -ms-transition: -ms-transform .4s ease-out;
+    -webkit-transition: -webkit-transform .4s ease-out;
+    transition: transform .4s ease-out;
+}
+
+.woocommerce-LoopProduct-link.woocommerce-loop-product__link:hover .woocommerce-placeholder.wp-post-image {
+    transform: scale(1.1);
 }
 
 /*--------------------------------------------------------------
@@ -600,13 +646,163 @@ ul.products li.product:hover {
 # CHECKOUT
 --------------------------------------------------------------*/
 
-#order_review_heading, #order_review{
+#order_review_heading, #order_review {
     width: 100% !important;
     float: unset !important;
 }
 
+.woocommerce-billing-fields .form-row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+input[type='text'], input[type='number'], input[type='email'], input[type='tel'], input[type='url'], input[type='password'], input[type='search'], textarea, .input-text {
+    border-radius: 4px 4px 0px 0px;
+    border-bottom-color: #000000;
+    min-height: 56px;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    letter-spacing: .009375em;
+    padding: 15px 16px 13px;
+    border-bottom: 1px solid;
+    box-shadow: none;
+}
+
+button, input[type='button'], input[type='reset'], input[type='submit'], .button, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .added_to_cart {
+    min-height: 58px;
+    padding: 1.1rem 1.5rem;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms;
+}
+
+.form-row.woocommerce-validated input.input-text {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-bottom-color: #0f834d;
+}
+
+.form-row.woocommerce-invalid input.input-text{
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-bottom-color: #e2401c;
+}
+
+#customer_details {
+    margin-bottom: 30px;
+}
+
+.woocommerce-additional-fields__field-wrapper .form-row {
+    margin: 0;
+}
+
+.woocommerce form .form-row .required {
+    visibility: hidden;
+}
+
+#payment .payment_methods{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #f2f2f2;
+}
+
+#payment .payment_methods > li:not(.woocommerce-notice){
+    background: transparent;
+}
+
+#payment .payment_methods > .woocommerce-PaymentMethod > label, #payment .payment_methods > .wc_payment_method > label{
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 0;
+    background: #f2f2f2;
+}
+
+table:not( .has-background ) th{
+    background-color: #f2f2f2;
+}
+
+table:not( .has-background ) tbody td{
+    background-color: #fafafa;
+}
+
+#payment .payment_methods > li .payment_box, #payment .place-order{
+    background: transparent;
+}
+
 /*--------------------------------------------------------------
 # CHECKOUT
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# NOTY
+--------------------------------------------------------------*/
+
+
+.woocommerce-message a, .woocommerce-info a, .woocommerce-error a, .woocommerce-noreviews a, p.no-comments a {
+    color: #616161;
+}
+
+.woocommerce-message a:hover, .woocommerce-info a:hover, .woocommerce-error a:hover, .woocommerce-noreviews a:hover, p.no-comments a:hover {
+    color: #212121;
+    opacity: 1;
+}
+
+.woocommerce-message, .woocommerce-info, .woocommerce-error, .woocommerce-noreviews, p.no-comments {
+    padding: 2em 1.618em;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    background-color: #fff;
+    margin-left: 0;
+    border-radius: 3px;
+    color: #212121;
+    clear: both;
+    text-align: center;
+    border: none;
+    box-shadow: 0 1px 1px 0 rgba(60, 64, 67, .08), 0 1px 3px 1px rgba(60, 64, 67, .16);
+    transition: box-shadow 135ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.woocommerce-message:hover, .woocommerce-info:hover, .woocommerce-error:hover, .woocommerce-noreviews:hover, p.no-comments:hover {
+    box-shadow: 0 1px 3px 1px rgba(60, 64, 67, .2), 0 2px 8px 4px rgba(60, 64, 67, .1);
+}
+
+.woocommerce-error {
+    text-align: left;
+}
+
+.woocommerce-Message .btn-primary, .woocommerce-message .button, .woocommerce-info .button, .woocommerce-error .button, .woocommerce-noreviews .button, p.no-comments .button {
+    float: right;
+    background: none;
+    color: #616161;
+    box-shadow: none;
+    line-height: 1.618;
+    margin-left: 1em;
+    border: 1px solid #e4e4e4;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border-left-color: #e4e4e4 !important;
+    transition: background 135ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.woocommerce-Message .btn-primary:hover, .woocommerce-message a.button:hover, .woocommerce-info a.button:hover, .woocommerce-error a.button:hover, .woocommerce-noreviews a.button:hover, p.no-comments a.button:hover {
+    background: #f5f5f5 !important;
+    background-color: #f5f5f5 !important;
+    border: 1px solid #e4e4e4 !important;
+
+}
+
+.woocommerce-Message .btn-primary:hover, .woocommerce-message .button:hover, .woocommerce-info .button:hover, .woocommerce-error .button:hover, .woocommerce-noreviews .button:hover, p.no-comments .button:hover {
+    color: #212121 !important;
+}
+
+/*--------------------------------------------------------------
+# NOTY
 --------------------------------------------------------------*/
 
 
@@ -651,8 +847,9 @@ and (max-width: 991px) {
 
 @media screen
 and (max-width: 768px) {
-
-
+    footer.site-footer {
+        padding-bottom: 75px;
+    }
 }
 
 @media screen

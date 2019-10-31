@@ -36,7 +36,13 @@ defined('ABSPATH') || exit;
         $fields = $checkout->get_checkout_fields('billing');
 
         foreach ($fields as $key => $field) {
+
+            if (isset($field['country_field'], $fields[$field['country_field']])) {
+                $field['country'] = $checkout->get_value($field['country_field']);
+            }
+
             woocommerce_form_field($key, $field, $checkout->get_value($key));
+
         }
         ?>
     </div>
