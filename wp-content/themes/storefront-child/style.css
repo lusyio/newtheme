@@ -550,6 +550,12 @@ footer.site-footer {
     background: transparent;
 }
 
+#reviews .commentlist li .avatar{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
 /*--------------------------------------------------------------
 # PRODUCT
 --------------------------------------------------------------*/
